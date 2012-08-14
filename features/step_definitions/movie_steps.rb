@@ -9,3 +9,7 @@ Given /the following movies exist/ do |movies_table|
     # you should arrange to add that movie to the database here.
   end
 end
+
+Then /the director of "(.+)" should be "(.+)"/ do |movie, director|
+  assert_equal director, Movie.find_by_title(movie).director
+end
